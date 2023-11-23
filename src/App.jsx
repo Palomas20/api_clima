@@ -2,9 +2,7 @@ import { LoadingButton } from "@mui/lab";
 import { Box, Container, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
-const API_WEATHER = `http://api.weatherapi.com/v1/current.json?key=${
-  import.meta.env.VITE_API_KEY
-}&lang=es&q=`;
+const API_WEATHER = `http://api.weatherapi.com/v1/current.json?key=${"239ddec04f7b44649b740129221603"}&lang=es&q=`;
 
 export default function App() {
   const [city, setCity] = useState("");
@@ -57,16 +55,8 @@ export default function App() {
   };
 
   return (
-    <Container
-      maxWidth="xs"
-      sx={{ mt: 2 }}
-    >
-      <Typography
-        variant="h3"
-        component="h1"
-        align="center"
-        gutterBottom
-      >
+    <Container maxWidth="xs" sx={{ mt: 2 }}>
+      <Typography variant="h3" component="h1" align="center" gutterBottom>
         Weather App
       </Typography>
       <Box
@@ -106,10 +96,7 @@ export default function App() {
             textAlign: "center",
           }}
         >
-          <Typography
-            variant="h4"
-            component="h2"
-          >
+          <Typography variant="h4" component="h2">
             {weather.city}, {weather.country}
           </Typography>
           <Box
@@ -118,30 +105,18 @@ export default function App() {
             src={weather.icon}
             sx={{ margin: "0 auto" }}
           />
-          <Typography
-            variant="h5"
-            component="h3"
-          >
+          <Typography variant="h5" component="h3">
             {weather.temperature} °C
           </Typography>
-          <Typography
-            variant="h6"
-            component="h4"
-          >
+          <Typography variant="h6" component="h4">
             {weather.conditionText}
           </Typography>
         </Box>
       )}
 
-      <Typography
-        textAlign="center"
-        sx={{ mt: 2, fontSize: "10px" }}
-      >
+      <Typography textAlign="center" sx={{ mt: 2, fontSize: "10px" }}>
         Powered by:{" "}
-        <a
-          href="https://www.weatherapi.com/"
-          title="Weather API"
-        >
+        <a href="https://www.weatherapi.com/" title="Weather API">
           WeatherAPI.com
         </a>
       </Typography>
